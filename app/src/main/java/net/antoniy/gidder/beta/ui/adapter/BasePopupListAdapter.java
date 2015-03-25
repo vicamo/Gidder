@@ -7,7 +7,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import net.antoniy.gidder.beta.R;
@@ -52,7 +51,7 @@ public abstract class BasePopupListAdapter<T> extends BaseAdapter implements OnC
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View v;
 		if (convertView == null) {
-			v = (LinearLayout) inflater.inflate(R.layout.popup_list_item, null);
+			v = inflater.inflate(R.layout.popup_list_item, null);
 		} else {
 			v = convertView;
 		}

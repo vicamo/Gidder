@@ -1,6 +1,5 @@
 package net.antoniy.gidder.beta.ui.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -103,7 +102,7 @@ public class DynamicDNSActivity extends BaseActivity implements OnCheckedChangeL
 			@Override
 			public boolean onMenuItemClick(MenuItem item) {
 				new DynamicDNSManager(DynamicDNSActivity.this).update();
-				((GidderApplication) ((Context) DynamicDNSActivity.this).getApplicationContext()).setUpdateDynDnsTime(System.currentTimeMillis());
+				((GidderApplication) DynamicDNSActivity.this.getApplicationContext()).setUpdateDynDnsTime(System.currentTimeMillis());
 				return true;
 			}
 

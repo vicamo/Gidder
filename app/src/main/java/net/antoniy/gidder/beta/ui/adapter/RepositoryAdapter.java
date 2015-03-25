@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import net.antoniy.gidder.beta.R;
@@ -45,7 +44,7 @@ public class RepositoryAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View v;
 		if (convertView == null) {
-			v = (LinearLayout) inflater.inflate(itemResourceId, null);
+			v = inflater.inflate(itemResourceId, null);
 		} else {
 			v = convertView;
 		}

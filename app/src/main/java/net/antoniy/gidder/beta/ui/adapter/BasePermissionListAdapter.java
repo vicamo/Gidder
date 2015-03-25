@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import net.antoniy.gidder.beta.R;
@@ -34,7 +33,7 @@ public abstract class BasePermissionListAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View v;
 		if (convertView == null) {
-			v = (LinearLayout) inflater.inflate(R.layout.permission_list_item, null);
+			v = inflater.inflate(R.layout.permission_list_item, null);
 		} else {
 			v = convertView;
 		}

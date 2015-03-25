@@ -31,7 +31,7 @@ public class GidderPreferencesActivity extends SherlockPreferenceActivity implem
 
 		sshPortPreferences = (EditTextPreference) getPreferenceScreen().findPreference(PrefsConstants.SSH_PORT.getKey());
 
-		Preference helpButton = (Preference) findPreference(PrefsConstants.HELP.getKey());
+		Preference helpButton = findPreference(PrefsConstants.HELP.getKey());
 		helpButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 			@Override
 			public boolean onPreferenceClick(Preference arg0) {
