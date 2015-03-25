@@ -87,8 +87,8 @@ public abstract class GidderCommons {
 		int addrInt = 0;
 
 		byte[] reversedAddr = reverse(addr);
-		for (int i = 0; i < reversedAddr.length; i++) {
-			addrInt = (addrInt << 8) | (reversedAddr[i] & 0xFF);
+		for (byte b : reversedAddr) {
+			addrInt = (addrInt << 8) | (b & 0xFF);
 		}
 
 		return addrInt;

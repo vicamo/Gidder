@@ -9,7 +9,6 @@ import net.antoniy.gidder.beta.db.entity.Permission;
 import net.antoniy.gidder.beta.db.entity.User;
 
 import java.sql.SQLException;
-import java.util.Iterator;
 import java.util.List;
 
 public class UserDao extends BaseDao<DBHelper, User, Integer> {
@@ -78,9 +77,7 @@ public class UserDao extends BaseDao<DBHelper, User, Integer> {
 		List<Permission> permissions = dbHelper.getPermissionDao().getAllByRepositoryId(repositoryId);
 
 		for (Permission permission : permissions) {
-			Iterator<User> iter = users.iterator();
-			while (iter.hasNext()) {
-				User user = iter.next();
+			for (User user : users) {
 				if (user.getId() == permission.getUser().getId()) {
 					users.remove(user);
 					break;
