@@ -123,15 +123,15 @@ public abstract class GidderCommons {
 		int ipAddress = myWifiInfo.getIpAddress();
 
 		byte[] addr = GidderCommons.convertIntToInet4Addr(ipAddress);
-		StringBuffer addressBuffer = new StringBuffer();
+		StringBuilder builder = new StringBuilder();
 		for (byte b : addr) {
-			if (!(addressBuffer.length() == 0)) {
-				addressBuffer.append('.');
+			if (!(builder.length() == 0)) {
+				builder.append('.');
 			}
-			addressBuffer.append(String.valueOf(b & 0xff));
+			builder.append(String.valueOf(b & 0xff));
 		}
 
-		return addressBuffer.toString();
+		return builder.toString();
 	}
 
 	public static String generateSha1(String data) {
@@ -151,16 +151,16 @@ public abstract class GidderCommons {
 
 	public static String toCamelCase(String s) {
 		String[] parts = s.split("_|\\s+");
-		StringBuffer camelCaseString = new StringBuffer();
+		StringBuilder builder = new StringBuilder();
 
 		boolean isFirst = true;
 		for (String part : parts) {
 			Log.i("Commons", "Camel case: '" + part + "'");
-			camelCaseString.append(toProperCase(part, isFirst));
+			builder.append(toProperCase(part, isFirst));
 			isFirst = false;
 		}
 
-		return camelCaseString.toString();
+		return builder.toString();
 	}
 
 	private static String toProperCase(String s, boolean firstLetterSmall) {
