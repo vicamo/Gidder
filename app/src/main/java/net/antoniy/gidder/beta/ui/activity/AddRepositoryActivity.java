@@ -129,7 +129,7 @@ public class AddRepositoryActivity extends BaseActivity {
 	}
 
 	private void populateFieldsWithRepositoryData() {
-		Repository repository = null;
+		Repository repository;
 		try {
 			repository = getHelper().getRepositoryDao().queryForId(repositoryId);
 		} catch (SQLException e) {

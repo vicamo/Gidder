@@ -78,7 +78,7 @@ public abstract class AbstractGitCommand extends BaseCommand {
 	}
 
 	protected String getRepositoryMapping() {
-		String mapping = null;
+		String mapping;
 		if (repoPath.startsWith("/")) {
 			mapping = repoPath.substring(1);
 		} else {

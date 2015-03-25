@@ -145,7 +145,7 @@ public class UserDetailsActivity extends BaseActivity implements OnItemLongClick
 
 				@Override
 				public boolean onMenuItemClick(MenuItem item) {
-					User user = null;
+					User user;
 					try {
 						user = getHelper().getUserDao().queryForId(userId);
 						user.setActive(!user.isActive());
@@ -187,7 +187,7 @@ public class UserDetailsActivity extends BaseActivity implements OnItemLongClick
 					}
 				};
 
-				User user = null;
+				User user;
 				try {
 					user = getHelper().getUserDao().queryForId(userId);
 				} catch (SQLException e) {
@@ -247,7 +247,7 @@ public class UserDetailsActivity extends BaseActivity implements OnItemLongClick
 	}
 
 	private void loadPermissionsListContent() {
-		List<Permission> permissions = null;
+		List<Permission> permissions;
 		try {
 			permissions = getHelper().getPermissionDao().getAllByUserId(userId);
 		} catch (SQLException e) {
@@ -272,7 +272,7 @@ public class UserDetailsActivity extends BaseActivity implements OnItemLongClick
 	}
 
 	private void populateFieldsWithUserData() {
-		User user = null;
+		User user;
 		try {
 			user = getHelper().getUserDao().queryForId(userId);
 		} catch (SQLException e) {

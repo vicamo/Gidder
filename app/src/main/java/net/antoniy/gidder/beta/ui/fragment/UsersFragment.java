@@ -88,7 +88,7 @@ public class UsersFragment extends BaseFragment implements OnItemLongClickListen
 	}
 
 	private void loadUsersListContent() {
-		List<User> users = null;
+		List<User> users;
 		try {
 			users = getHelper().getUserDao().queryForAll();
 		} catch (SQLException e) {
@@ -113,7 +113,7 @@ public class UsersFragment extends BaseFragment implements OnItemLongClickListen
 	}
 
 	private void updateUsersList() {
-		List<User> users = null;
+		List<User> users;
 		try {
 			users = getHelper().getUserDao().queryForAll();
 		} catch (SQLException e) {

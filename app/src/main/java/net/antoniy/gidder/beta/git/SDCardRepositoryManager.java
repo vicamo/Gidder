@@ -26,7 +26,7 @@ class SDCardRepositoryManager implements GitRepositoryManager {
 
 	@Override
 	public Git openRepository(String name) throws RepositoryNotFoundException {
-		Git git = null;
+		Git git;
 		try {
 			git = Git.open(getRepositoryPath(name + Constants.DOT_GIT_EXT));
 		} catch (IOException e) {

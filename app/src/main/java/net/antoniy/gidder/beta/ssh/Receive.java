@@ -61,7 +61,7 @@ public final class Receive extends AbstractGitCommand {
 	private boolean hasPermission() {
 		String username = session.getUsername();
 
-		boolean hasPermission = false;
+		boolean hasPermission;
 		try {
 			hasPermission = sshAuthorizationManager.hasRepositoryPushPermission(username, getRepositoryMapping());
 		} catch (SshAuthorizationException e) {

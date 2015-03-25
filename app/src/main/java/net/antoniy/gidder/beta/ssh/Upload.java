@@ -64,7 +64,7 @@ public final class Upload extends AbstractGitCommand {
 	private boolean hasPermission() {
 		String username = session.getUsername();
 
-		boolean hasPermission = false;
+		boolean hasPermission;
 		try {
 			hasPermission = sshAuthorizationManager.hasRepositoryPullPermission(username, getRepositoryMapping());
 		} catch (SshAuthorizationException e) {

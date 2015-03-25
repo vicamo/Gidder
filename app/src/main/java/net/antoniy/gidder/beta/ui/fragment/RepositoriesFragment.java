@@ -87,7 +87,7 @@ public class RepositoriesFragment extends BaseFragment implements OnItemLongClic
 	}
 
 	private void loadRepositoriesListContent() {
-		List<Repository> repositories = null;
+		List<Repository> repositories;
 		try {
 			repositories = getHelper().getRepositoryDao().queryForAll();
 		} catch (SQLException e) {
@@ -112,7 +112,7 @@ public class RepositoriesFragment extends BaseFragment implements OnItemLongClic
 	}
 
 	private void updateRepositoriesList() {
-		List<Repository> repositories = null;
+		List<Repository> repositories;
 		try {
 			repositories = getHelper().getRepositoryDao().queryForAll();
 		} catch (SQLException e) {

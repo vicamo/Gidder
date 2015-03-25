@@ -146,7 +146,7 @@ public class RepositoryDetailsActivity extends BaseActivity implements OnItemLon
 
 				@Override
 				public boolean onMenuItemClick(MenuItem item) {
-					Repository repository = null;
+					Repository repository;
 
 					try {
 						repository = getHelper().getRepositoryDao().queryForId(repositoryId);
@@ -192,7 +192,7 @@ public class RepositoryDetailsActivity extends BaseActivity implements OnItemLon
 					}
 				};
 
-				Repository repository = null;
+				Repository repository;
 				try {
 					repository = getHelper().getRepositoryDao().queryForId(repositoryId);
 				} catch (SQLException e) {
@@ -252,7 +252,7 @@ public class RepositoryDetailsActivity extends BaseActivity implements OnItemLon
 	}
 
 	private void loadPermissionsListContent() {
-		List<Permission> permissions = null;
+		List<Permission> permissions;
 		try {
 			permissions = getHelper().getPermissionDao().getAllByRepositoryId(repositoryId);
 		} catch (SQLException e) {
@@ -277,7 +277,7 @@ public class RepositoryDetailsActivity extends BaseActivity implements OnItemLon
 	}
 
 	private void populateFieldsWithUserData() {
-		Repository repository = null;
+		Repository repository;
 		try {
 			repository = getHelper().getRepositoryDao().queryForId(repositoryId);
 		} catch (SQLException e) {

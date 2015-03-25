@@ -141,7 +141,7 @@ public class AddUserActivity extends BaseActivity {
 	}
 
 	private void populateFieldsWithUserData() {
-		User user = null;
+		User user;
 		try {
 			user = getHelper().getUserDao().queryForId(userId);
 		} catch (SQLException e) {

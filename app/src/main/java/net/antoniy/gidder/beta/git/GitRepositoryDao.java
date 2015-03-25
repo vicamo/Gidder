@@ -36,7 +36,7 @@ public class GitRepositoryDao {
 			return;
 		}
 
-		Repository repository = null;
+		Repository repository;
 		try {
 			repository = dbHelper.getRepositoryDao().queryForId(repositoryId);
 		} catch (SQLException e) {
