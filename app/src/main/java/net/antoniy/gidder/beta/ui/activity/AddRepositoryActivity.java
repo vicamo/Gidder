@@ -34,7 +34,7 @@ public class AddRepositoryActivity extends BaseActivity {
 	private EditText nameEditText;
 	private EditText mappingEditText;
 	private EditText descriptionEditText;
-	private CheckBox activateCheckox;
+	private CheckBox activateCheckBox;
 	private boolean editMode = false;
 	private int repositoryId;
 	private GitRepositoryDao repositoryDao;
@@ -69,7 +69,7 @@ public class AddRepositoryActivity extends BaseActivity {
 
 		mappingEditText = (EditText) findViewById(R.id.addRepositoryMapping);
 		descriptionEditText = (EditText) findViewById(R.id.addRepositoryDescription);
-		activateCheckox = (CheckBox) findViewById(R.id.addRepositoryActivate);
+		activateCheckBox = (CheckBox) findViewById(R.id.addRepositoryActivate);
 
 		if (editMode) {
 			populateFieldsWithRepositoryData();
@@ -140,7 +140,7 @@ public class AddRepositoryActivity extends BaseActivity {
 		nameEditText.setText(repository.getName());
 		mappingEditText.setText(repository.getMapping());
 		descriptionEditText.setText(repository.getDescription());
-		activateCheckox.setChecked(repository.isActive());
+		activateCheckBox.setChecked(repository.isActive());
 	}
 
 	private void processRepositoryAction() {
@@ -151,7 +151,7 @@ public class AddRepositoryActivity extends BaseActivity {
 		final String name = nameEditText.getText().toString().trim();
 		final String mapping = mappingEditText.getText().toString().trim();
 		final String description = descriptionEditText.getText().toString().trim();
-		final boolean active = activateCheckox.isChecked();
+		final boolean active = activateCheckBox.isChecked();
 
 		if (editMode) {
 			final ProgressDialog dialog = ProgressDialog.show(AddRepositoryActivity.this, "", "Renaming repository...", true);
