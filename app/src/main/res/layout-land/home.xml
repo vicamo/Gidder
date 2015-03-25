@@ -77,7 +77,6 @@
                 android:id="@+id/homeServerInfoTextView"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/homeWifiStatusContainer"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/server_info_bg"
                 android:gravity="center"
