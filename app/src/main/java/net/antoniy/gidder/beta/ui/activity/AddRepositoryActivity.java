@@ -245,23 +245,23 @@ public class AddRepositoryActivity extends BaseActivity {
 		return isAllFieldsValid;
 	}
 
-	private boolean isEditTextEmpty(EditText tv) {
+	private boolean isEditTextValid(EditText tv) {
 		String text = tv.getText().toString();
 		if ("".equals(text.trim())) {
 			tv.startAnimation(AnimationUtils.loadAnimation(AddRepositoryActivity.this, R.anim.shake));
 			tv.setError("Field must contain value");
-			return true;
-		} else {
 			return false;
+		} else {
+			return true;
 		}
 	}
 
 	private boolean isNameValid() {
-		return !isEditTextEmpty(nameEditText);
+		return isEditTextValid(nameEditText);
 	}
 
 	private boolean isMappingValid() {
-		return !isEditTextEmpty(mappingEditText);
+		return isEditTextValid(mappingEditText);
 	}
 
 }

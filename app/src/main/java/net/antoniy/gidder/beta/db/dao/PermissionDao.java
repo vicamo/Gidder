@@ -49,12 +49,10 @@ public class PermissionDao extends BaseDao<DBHelper, Permission, Integer> {
 	}
 
 	public List<Permission> getAllByUserId(int userId) throws SQLException {
-		List<Permission> permissions = dao.queryForEq(DBC.permissions.column_user_id, new SelectArg(userId));
-		return permissions;
+		return dao.queryForEq(DBC.permissions.column_user_id, new SelectArg(userId));
 	}
 
 	public List<Permission> getAllByRepositoryId(int repositoryId) throws SQLException {
-		List<Permission> permissions = dao.queryForEq(DBC.permissions.column_repository_id, new SelectArg(repositoryId));
-		return permissions;
+		return dao.queryForEq(DBC.permissions.column_repository_id, new SelectArg(repositoryId));
 	}
 }

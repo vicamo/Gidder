@@ -43,9 +43,7 @@ class SDCardRepositoryManager implements GitRepositoryManager {
 			initCommand.setBare(true);
 			initCommand.setDirectory(getRepositoryPath(name + Constants.DOT_GIT_EXT));
 
-			Git git = initCommand.call();
-
-			return git;
+			return initCommand.call();
 		} catch (GitAPIException e) {
 			throw new RepositoryNotFoundException("Error while creating repository.", e);
 		}
@@ -107,8 +105,6 @@ class SDCardRepositoryManager implements GitRepositoryManager {
 			}
 		}
 
-		File repoPath = new File(baseRepositoriesPath + repoMapping);
-
-		return repoPath;
+		return new File(baseRepositoriesPath + repoMapping);
 	}
 }

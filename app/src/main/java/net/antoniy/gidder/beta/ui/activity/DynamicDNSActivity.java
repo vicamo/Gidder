@@ -223,26 +223,26 @@ public class DynamicDNSActivity extends BaseActivity implements OnCheckedChangeL
 		return isAllFieldsValid;
 	}
 
-	private boolean isEditTextEmpty(EditText tv) {
+	private boolean isEditTextValid(EditText tv) {
 		String text = tv.getText().toString();
 		if ("".equals(text.trim())) {
 			tv.setError("Field must contain value");
-			return true;
-		} else {
 			return false;
+		} else {
+			return true;
 		}
 	}
 
 	private boolean isDomainValid() {
-		return !isEditTextEmpty(domainEditText);
+		return isEditTextValid(domainEditText);
 	}
 
 	private boolean isPasswordValid() {
-		return !isEditTextEmpty(passwordEditText);
+		return isEditTextValid(passwordEditText);
 	}
 
 	private boolean isUsernameValid() {
-		return !isEditTextEmpty(usernameEditText);
+		return isEditTextValid(usernameEditText);
 	}
 
 	private void saveFieldData() {

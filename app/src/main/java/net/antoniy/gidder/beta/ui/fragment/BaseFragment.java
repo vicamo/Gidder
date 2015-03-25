@@ -79,8 +79,7 @@ public abstract class BaseFragment extends SherlockFragment {
 	 * </p>
 	 */
 	protected DBHelper getHelperInternal(Context context) {
-		DBHelper newHelper = OpenHelperManager.getHelper(context, DBHelper.class);
-		return newHelper;
+		return OpenHelperManager.getHelper(context, DBHelper.class);
 	}
 
 	/**

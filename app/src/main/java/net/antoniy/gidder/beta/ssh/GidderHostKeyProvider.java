@@ -93,8 +93,7 @@ public class GidderHostKeyProvider extends AbstractKeyPairProvider {
 		try {
 			KeyPairGenerator generator = SecurityUtils.getKeyPairGenerator(ALGORITHM);
 			Log.i(TAG, "Generating host key...");
-			KeyPair kp = generator.generateKeyPair();
-			return kp;
+			return generator.generateKeyPair();
 		} catch (Exception e) {
 			Log.e(TAG, "Unable to generate keypair.", e);
 			return null;

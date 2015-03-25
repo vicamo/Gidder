@@ -146,9 +146,7 @@ public abstract class GidderCommons {
 
 		sha1.doFinal(dataDigest, 0);
 
-		String dataSha1 = new String(Hex.encode(dataDigest));
-
-		return dataSha1;
+		return new String(Hex.encode(dataDigest));
 	}
 
 	public static String toCamelCase(String s) {

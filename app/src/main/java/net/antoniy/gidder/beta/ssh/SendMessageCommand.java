@@ -41,9 +41,8 @@ public class SendMessageCommand extends BaseCommand {
 		msg.append("  ****    Welcome to the Android Git Server   ****\r\n");
 		msg.append("\r\n");
 
-		String name = user;
 		msg.append("  Hi ");
-		msg.append(name);
+		msg.append(user);
 		msg.append(", you have successfully connected over SSH.");
 		msg.append("\r\n");
 		msg.append("\r\n");
