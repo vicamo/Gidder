@@ -68,22 +68,14 @@ public abstract class GidderCommons {
 		NetworkInfo info = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 		String ssid = getWifiSSID(context);
 
-		if (info.isConnected() && ssid != null && !"".equals(ssid)) {
-			return true;
-		} else {
-			return false;
-		}
+		return info.isConnected() && ssid != null && !"".equals(ssid);
 	}
 
 	public static boolean isWifiConnected(Context context) {
 		ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo info = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
-		if (info.isConnected()) {
-			return true;
-		} else {
-			return false;
-		}
+		return info.isConnected();
 	}
 
 	public static String getWifiSSID(Context context) {

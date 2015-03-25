@@ -7,7 +7,7 @@ public enum FragmentType {
 
 	private String title;
 
-	private FragmentType(String title) {
+	FragmentType(String title) {
 		this.title = title;
 	}
 

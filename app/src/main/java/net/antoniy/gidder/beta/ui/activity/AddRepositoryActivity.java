@@ -47,11 +47,7 @@ public class AddRepositoryActivity extends BaseActivity {
 			repositoryId = getIntent().getExtras().getInt("repositoryId", -1);
 			Log.i(TAG, "RepositoryID: " + repositoryId);
 
-			if (repositoryId > 0) {
-				editMode = true;
-			} else {
-				editMode = false;
-			}
+			editMode = repositoryId > 0;
 		}
 
 		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);

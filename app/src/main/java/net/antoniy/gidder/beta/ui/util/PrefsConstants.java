@@ -23,7 +23,7 @@ public enum PrefsConstants {
 	private final String key;
 	private final String defaultValue;
 
-	private PrefsConstants(String key, String defaultValue) {
+	PrefsConstants(String key, String defaultValue) {
 		this.key = key;
 		this.defaultValue = defaultValue;
 	}

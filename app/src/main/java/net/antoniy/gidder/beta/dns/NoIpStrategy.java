@@ -109,7 +109,6 @@ public class NoIpStrategy extends DynamicDNS {
 		} finally {
 			httpClient.getConnectionManager().shutdown();
 		}
-		return;
 	}
 
 }

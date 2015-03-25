@@ -5,12 +5,12 @@ import org.eclipse.jgit.errors.RepositoryNotFoundException;
 
 public interface GitRepositoryManager {
 
-	public Git openRepository(String mapping) throws RepositoryNotFoundException;
+	Git openRepository(String mapping) throws RepositoryNotFoundException;
 
-	public Git createRepository(String mapping) throws RepositoryNotFoundException;
+	Git createRepository(String mapping) throws RepositoryNotFoundException;
 
-	public void renameRepository(String oldMapping, String newMapping) throws RepositoryNotFoundException;
+	void renameRepository(String oldMapping, String newMapping) throws RepositoryNotFoundException;
 
-	public void deleteRepository(String mapping) throws RepositoryNotFoundException;
+	void deleteRepository(String mapping) throws RepositoryNotFoundException;
 
 }

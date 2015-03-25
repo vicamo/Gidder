@@ -104,7 +104,7 @@ public class SSHDaemonService extends Service implements PasswordAuthenticator, 
 			toggleWidgetState(true);
 
 			boolean isStatusBarNotificationEnabled = prefs.getBoolean(PrefsConstants.STATUSBAR_NOTIFICATION.getKey(),
-					"true".equals(PrefsConstants.STATUSBAR_NOTIFICATION.getDefaultValue()) ? true : false);
+					"true".equals(PrefsConstants.STATUSBAR_NOTIFICATION.getDefaultValue()));
 
 			if (isStatusBarNotificationEnabled) {
 				GidderCommons.makeStatusBarNotification(this);

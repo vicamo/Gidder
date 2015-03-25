@@ -47,6 +47,8 @@ public abstract class AbstractGitCommand extends BaseCommand {
 			return;
 		}
 
+		String errorMsg = null;
+
 		try {
 			runImpl();
 
@@ -54,21 +56,24 @@ public abstract class AbstractGitCommand extends BaseCommand {
 			err.flush();
 		} catch (IOException e) {
 			Log.e(TAG, "I/O repository problem.", e);
-			onExit(CODE_ERROR, MSG_REPOSITORY_ACCESS_PROBLEM);
-			return;
+			errorMsg = MSG_REPOSITORY_ACCESS_PROBLEM;
 		} finally {
 			repo.close();
+
 			try {
 				in.close();
 				out.close();
 				err.close();
 			} catch (IOException e) {
 				Log.w(TAG, "Error closing the streams.", e);
-				onExit(CODE_ERROR, MSG_REPOSITORY_ACCESS_PROBLEM);
-				return;
+				errorMsg = MSG_REPOSITORY_ACCESS_PROBLEM;
+			} finally {
+				if (errorMsg != null) {
+					onExit(CODE_ERROR, errorMsg);
+				} else {
+					onExit(CODE_OK);
+				}
 			}
-
-			onExit(CODE_OK);
 		}
 	}
 

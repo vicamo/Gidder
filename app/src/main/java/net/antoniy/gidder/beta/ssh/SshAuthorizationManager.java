@@ -51,13 +51,8 @@ public class SshAuthorizationManager {
 				return false;
 			}
 
-			// Check for pull or push
-			if (checkPull) {
-				// If there is permission record - there is a pull privileges.
-				return true;
-			} else {
-				return !permission.isReadOnly();
-			}
+			// Check for pull or push. If there is permission record - there is a pull privileges.
+			return checkPull || !permission.isReadOnly();
 		} catch (SQLException e) {
 			throw new SshAuthorizationException("I/O problem while quering the database.", e);
 		}

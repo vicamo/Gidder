@@ -54,11 +54,7 @@ public class AddUserActivity extends BaseActivity {
 			userId = getIntent().getExtras().getInt("userId", -1);
 			Log.i(TAG, "UserID: " + userId);
 
-			if (userId > 0) {
-				editMode = true;
-			} else {
-				editMode = false;
-			}
+			editMode = userId > 0;
 		}
 
 		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);

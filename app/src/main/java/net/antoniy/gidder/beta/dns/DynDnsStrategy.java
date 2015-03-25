@@ -115,7 +115,6 @@ public class DynDnsStrategy extends DynamicDNS {
 		} finally {
 			httpClient.getConnectionManager().shutdown();
 		}
-		return;
 	}
 
 }
